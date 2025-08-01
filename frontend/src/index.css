@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+    html {
+    @apply scroll-smooth;
+    /* This is the equivalent of scroll-behavior: smooth; */
+  }
+  body {
+    @apply bg-gradient-to-br from-black via-purple-900 to-black;
+    background-size: 200% 200%;
+    animation: gradient-animation 15s ease infinite;
+
+    scrollbar-color: #22d3ee transparent; /* thumb track */
+    scrollbar-width: thin;
+  }
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- ADD THIS CODE FOR CHROME, SAFARI, EDGE --- */
+
+/* Set the width of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Style the background of the scrollbar (the track) */
+::-webkit-scrollbar-track {
+  background: #0f172a; /* A dark slate color for the track */
+}
+
+/* Style the draggable part of the scrollbar (the thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #22d3ee; /* The primary cyan color */
+  border-radius: 20px;
+  border: 3px solid #0f172a; /* Creates padding around the thumb */
+}
+
+/* Style the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #67e8f9; /* A lighter cyan on hover */
+}
+
+/* --- ADD THIS FOR THE ANIMATED GRADIENT BUTTON --- */
+@layer components {
+  .btn-animated-gradient {
+    /* Use @apply to add standard Tailwind utilities */
+    @apply inline-block px-8 py-4 text-base font-bold text-white rounded-full uppercase tracking-wider shadow-lg transform hover:scale-105 transition-transform duration-300;
+
+    /* 
+      Define a gradient that's twice the button's width.
+      It goes from Purple -> Cyan and back to Purple to create a seamless loop.
+    */
+    background: linear-gradient(90deg, #8b5cf6, #22d3ee, #8b5cf6);
+    background-size: 200% auto;
+
+    /* Set the transition for the background-position property */
+    transition: background-position 0.5s ease-out;
+  }
+
+  .btn-animated-gradient:hover {
+    /* On hover, slide the background to the left to reveal the other half of the gradient */
+    background-position: -100% 0;
+  }
+
+  /* 
+    --- UPDATED HEADER STYLE ---
+    This now uses a vertical purple-to-purple gradient to match your image.
+  */
+  .section-header {
+    @apply text-4xl font-bold text-center mb-16 relative pb-4;
+
+    /* A vertical gradient from a lighter purple to a darker purple */
+    background: linear-gradient(180deg, #a78bfa, #5b21b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* The underline is now a solid, bold purple to match */
+  .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    /* The underline now uses the site's cyan accent color */
+    background: #22d3ee; 
+  }
+
+}
