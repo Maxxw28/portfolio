@@ -6,32 +6,32 @@ import { Fade } from 'react-awesome-reveal';
 const Experience = () => {
 	const projects = [
 		{
-			title: 'Corporate Website Redesign',
-			role: 'Lead Frontend Developer',
-			company: 'Tech Solutions Inc.',
-			date: '2022 - Present',
-			imageUrl: 'https://placehold.co/600x400/1e1b4b/ffffff?text=Project+One', // Replace with your project image
+			title: 'SuiteControl Hotel Management System',
+			role: 'Project Manager & Frontend Developer',
+			date: 'Sep 2023 - Jun 2024',
+			imageUrl: '/images/suiteControlLogo.png', // Replace with your project image
 			responsibilities: [
-				'Led the redesign of the main corporate website, improving user engagement by 40%.',
-				'Developed a custom component library in React to ensure design consistency.',
-				'Implemented a new headless CMS for easier content management by the marketing team.',
+				"I managed the group's work during the period of application creation and development",
+				'I developed the frontend, I connected libraries such as react-hook-form, react-router-dom',
+				'I developed most of the styles visible throughout the site. I am responsible for the main design of the home page and the hotel dashboard.',
+				'I tested and developed most of the visible functionalities such as: managing hotel rooms, managing reservations, managing users, managing hotel services, managing hotel staff',
 			],
-			tech: ['React', 'Next.js', 'Tailwind CSS', 'GraphQL', 'Storybook'],
-			link: 'https://example.com/project-one',
+			tech: ['React', 'Javascript', 'Tailwind CSS', 'Firebase', 'SCSS'],
+			link: 'https://suitecontrol-e74ea.web.app/',
 		},
 		{
-			title: 'E-commerce Platform',
+			title: 'BoomBat web gaming platform',
 			role: 'Frontend Developer',
-			company: 'ShopSphere',
-			date: '2020 - 2022',
-			imageUrl: 'https://placehold.co/600x400/4c1d95/ffffff?text=Project+Two', // Replace with your project image
+			date: 'Jul 2025 - Aug 2025',
+			imageUrl: '/images/boombat.png', // Replace with your project image
 			responsibilities: [
-				'Built and maintained the product search and checkout pages using Vue.js.',
-				'Optimized page load times, resulting in a 15% increase in conversion rates.',
-				'Collaborated with backend developers to integrate REST APIs for product and user data.',
+				'I developed the frontend of the platform, I connected libraries such as react-router-dom',
+				'I added many pages connected to mongodb such as the user panel, the game panel, the game settings panel',
+				'I created the project structure and routes to which I added security measures such as authentication and authorization',
+				'I was responsible for the styles and main design of the pages, I adapted the dedicated colors in line with the color palette',
 			],
-			tech: ['Vue.js', 'Vuex', 'SCSS', 'Jest', 'Webpack'],
-			link: 'https://example.com/project-two',
+			tech: ['MongoDB', 'Javascript', 'Tailwind CSS', 'React', 'Express js'],
+			link: 'http://localhost:5174', // Replace with your project link
 		},
 	];
 
@@ -55,14 +55,14 @@ const Experience = () => {
 								<img
 									src={project.imageUrl}
 									alt={project.title}
-									className="w-full lg:w-1/3 h-56 lg:h-auto object-cover"
+									className="w-full lg:w-1/3 h-56 lg:h-auto object-center"
 								/>
 								<div className="p-8 flex flex-col justify-between">
 									<div>
 										<h3 className="text-3xl font-bold mb-1">{project.title}</h3>
 										{/* --- UPDATED: Role color changed to cyan for better contrast --- */}
 										<p className="text-cyan-400 font-semibold mb-3">
-											{project.role} at {project.company} ({project.date})
+											{project.role} ({project.date})
 										</p>
 										<ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
 											{project.responsibilities.map((resp, i) => (
